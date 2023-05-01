@@ -1,14 +1,15 @@
 import { html } from "@stricjs/arrow/utils";
 import link from "./components/link";
+import background from "./components/background";
 
 import "./styles/index.css";
 
 export function render() {
     html`
-        <div id="background"></div>
+        ${background}
         <main>
             <h1>Manage time in tests</h1>
-            <p>A timer with useful features to help you practice</p>
+            <p>A timer with tasks scheduling to help you practice</p>
             <button @click="${link("/create")}">Create one now</button>
         </main>
     `;

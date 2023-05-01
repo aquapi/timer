@@ -1,8 +1,9 @@
 import { ArrowTemplate, template, Event, createForm, Component, ReactiveProxy, reactive } from "@stricjs/arrow/utils";
 
 import "./index.css";
+import minuteSuffix from "../../utils/minuteSuffix";
 
-interface Task {
+export interface Task {
     /**
      * Task name
      */
@@ -11,10 +12,6 @@ interface Task {
      * Task duration
      */
     readonly duration: number;
-}
-
-function minuteSuffix(duration: number) {
-    return duration > 1 ? "minutes" : "minute";
 }
 
 export default class Tasks extends Component {
@@ -104,8 +101,8 @@ export default class Tasks extends Component {
                     const { name, duration } = this.list[i];
 
                     res.push(template`<div class="task">
-                        <a @click="${() => this.remove(i)}">-</a>
-                        <p>${name} - ${duration} ${minuteSuffix(duration)}</p>
+                        <div @click="${() => this.remove(i)}">-</div>
+                        <p>${name} - ${minuteSuffix(duration)}</p>
                     </div>`);
                 }
 
@@ -125,7 +122,7 @@ export default class Tasks extends Component {
                     placeholder="Duration..."
                     required
                 />
-                <button type="submit"></button>
+                <button type="submit">+</button>
             </form>
         `;
     }

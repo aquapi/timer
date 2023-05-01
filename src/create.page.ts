@@ -1,10 +1,11 @@
 import { html, createForm, template } from "@stricjs/arrow/utils";
 import Tasks from "./components/tasks";
+import background from "./components/background";
 
 import "./styles/create.css";
 
 export function render() {
-    const form = createForm<{ time: string }>();
+    const form = createForm({ time: "90" });
     const tasks = new Tasks();
 
     function submit() {
@@ -35,26 +36,29 @@ export function render() {
         }
     });
 
-    html`<main>
-        <h2>Create a timer</h2>
-        <form>
-            <!-- Select time limit -->
-            <div id="time">
-                <p>Time limit:</p>
-                <select name="time" @change="${form.select("time")}">
-                    ${timeList.map(v => template`<option value="${v}">
-                        ${v} minutes
-                    </option>`)}
-                </select>
-            </div>
+    html`
+        ${background}
+        <main>
+            <h2>Create a timer</h2>
+            <form>
+                <!-- Select time limit -->
+                <div id="time">
+                    <p>Time limit:</p>
+                    <select name="time" @change="${form.select("time")}">
+                        ${timeList.map(v => template`<option value="${v}">
+                            ${v} minutes
+                        </option>`)}
+                    </select>
+                </div>
 
-            <!-- Add tasks -->
-            ${tasks.template}
-        </form>
+                <!-- Add tasks -->
+                ${tasks.template}
+            </form>
 
-        <br />
-        <button @click="${submit}">Start</button>
-    </main>`;
+            <br />
+            <button @click="${submit}">Start</button>
+        </main>
+    `;
 }
 
 export const path = "/create";

@@ -1,15 +1,11 @@
-body {
-    background-image: url(../assets/background.jpg);
-    background-size: cover;
-}
-
 main {
+    z-index: 2;
     text-align: center;
 
     padding: 30px;
     border-radius: 12px;
 
-    background-color: rgba(255, 255, 255, .75);
+    background-color: rgba(255, 255, 255, .7);
     color: rgb(93, 93, 93);
 }
 
@@ -46,7 +42,7 @@ main > button {
     color: white;
 }
 
-p {
+p, #time > select {
     font-size: 15px;
 
     margin: 0;
@@ -55,6 +51,8 @@ p {
 /* Time limit box */
 #time {
     display: flex;
+    align-items: flex-end;
+
     margin-bottom: 5px;
 }
 
@@ -64,4 +62,6 @@ p {
 
     background-color: transparent;
     color: rgb(93, 93, 93);
+
+    margin-left: 2px;
 }
