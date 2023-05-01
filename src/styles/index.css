@@ -1,0 +1,50 @@
+#background {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 0;
+
+    background-image: url(../assets/background.jpg);
+    background-size: cover;
+}
+
+main {
+    background-color: rgba(0, 0, 0, .7);
+    color: white;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+
+    z-index: 1;
+}
+
+p {
+    font-size: 18px;
+
+    margin-bottom: 25px;
+}
+
+button {
+    font-size: 16px;
+
+    padding: 10px 25px;
+
+    border-radius: 6px;
+    border: none;
+
+    color: white;
+    background-color: var(--primary-color);
+}
+
+h1 {
+    margin: 0;
+}

@@ -1,0 +1,48 @@
+/* Tasks */
+.task {
+    display: flex;
+    align-items: center;
+
+    height: 12px;
+    margin-bottom: 10px;
+}
+
+.task > a {
+    vertical-align: middle;
+    margin: 15px;
+    
+    font-size: 20px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.task > p {
+    font-size: 13.5px;
+}
+
+/* Other form elements */
+#task-submit {
+    display: flex;
+    justify-content: space-around;
+
+    width: 100%;
+}
+
+#task-submit > input {
+    padding: 6.5px 10px;
+    max-width: 80px;
+
+    background-color: transparent;
+    
+    border-width: 0px 0px 1px 0px;
+    outline: none;
+}
+
+#task-submit > button {
+    display: none;
+}
+
+#tasks, #task-submit {
+    margin-top: 10px;
+}
