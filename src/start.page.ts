@@ -28,7 +28,7 @@ export async function render() {
         const task = taskList[i];
         if (task && this.now === tasksDuration) {
             const note = new Notification(task.name, {
-                body: `It's been ${minuteSuffix(task.duration)}.\nYou should have done this task by now`
+                body: `It's been ${minuteSuffix(task.duration)}.\nYou should have done this task by now.`
             });
 
             setTimeout(() => note.close(), 10000);
