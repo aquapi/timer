@@ -30,7 +30,7 @@ export default class Tasks extends Component {
     /**
      * The form states
      */
-    readonly state: ReturnType<typeof createForm<Task>>;
+    readonly state: any;
 
     constructor(public timeLimit: number = 90) {
         super();
