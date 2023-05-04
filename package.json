@@ -6,6 +6,6 @@
     "bun-types": "latest"
   },
   "dependencies": {
-    "@stricjs/arrow": "^2.0.0"
+    "@stricjs/arrow": "^2.0.2"
   }
 }
